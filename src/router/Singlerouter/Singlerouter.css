@@ -1,0 +1,213 @@
+.single__route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+  margin-bottom: 50px;
+}
+
+.single__left .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__left .wishes {
+  border: none;
+  background: #6f00ff00;
+  color: rgb(129, 128, 128);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.route__img {
+  width: 450px;
+  height: 600px;
+}
+.single__left .wishes span {
+  font-size: 15px;
+}
+.month {
+  display: inline-block;
+  background: var(--bg-gold);
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.single__left {
+  width: 60%;
+  padding: 1% 0;
+}
+
+.single__left h2 {
+  font-size: 23px;
+  letter-spacing: 0.5px;
+}
+
+.single__left p {
+  font-size: 15px;
+}
+
+.single__left .line {
+  width: 100%;
+  height: 1.3px;
+  background: #ddd;
+  margin-bottom: 20px;
+}
+
+.single__left h4 {
+  font-weight: 500;
+}
+
+.single__left .quantity {
+  width: 16%;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__left h3 {
+  display: flex;
+  align-items: center;
+}
+
+.single__left h3 del {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(104, 100, 100);
+}
+
+.single__left h3 button {
+  padding: 2px 5px;
+  font-size: 15px;
+  background: var(--bg-py);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+.single__left input {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #ddd;
+  text-indent: 15px;
+  margin-bottom: 20px;
+}
+
+.single__left input::placeholder {
+  color: rgb(145, 142, 142);
+  font-size: 12px;
+}
+
+.single__left .add__cart {
+  width: 49%;
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: var(--bg-py);
+}
+.single__left .inc {
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: var(--bg-py);
+  cursor: pointer;
+}
+.single__left .dec {
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: var(--bg-py);
+  cursor: pointer;
+}
+.single__left .add__bag {
+  width: 50%;
+  margin-left: 1%;
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--bg-py);
+  border-radius: 10px;
+  background: #6f00ff00;
+  color: var(--bg-py);
+}
+
+.add__bag:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.add__cart:hover {
+  cursor: pointer;
+  background-color: #6000ff;
+}
+
+@media screen and (max-width: 1207px) {
+  .single__route {
+    width: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .single__route img {
+    width: 40%;
+    margin-right: 10%;
+  }
+
+  .single__left {
+    width: 50%;
+  }
+
+  .single__left .buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .single__left .add__cart {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .single__route img {
+    width: 60%;
+    margin: auto;
+    height: 20%;
+  }
+
+  .single__left {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .single__left .add__cart {
+    width: 100%;
+  }
+
+  .single__left .add__bag {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

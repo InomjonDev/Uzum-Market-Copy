@@ -1,0 +1,40 @@
+.empty__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.empty__title {
+  font-size: 22px;
+  margin-top: 24px;
+}
+
+.empty__text {
+  font-size: 12px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.empty__btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #6e00ff;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+}
+
+.empty__btn:hover {
+  cursor: pointer;
+  background-color: #7000ff;
+}
+
+@media screen and (max-width: 500px) {
+  .empty__text {
+    font-size: 11px;
+    padding: 0 20px;
+  }
+}
