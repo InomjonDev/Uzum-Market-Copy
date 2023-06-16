@@ -29,4 +29,10 @@ export const PRODUCTS = [
     price: 1_800_000,
     url: "https://images.uzum.uz/ci1ffp36edfostigiqn0/original.jpg",
   },
+  {
+    id: "pro-6",
+    title: "Makaron mahsulotlari Bottega, spirallar, 400 g",
+    price: 1_800_000,
+    url: "https://images.uzum.uz/ce6vungv1htd23aip2ig/t_product_540_high.jpg#1686932405737",
+  },
 ];
