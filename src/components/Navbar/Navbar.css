@@ -14,6 +14,11 @@
   font-size: 14px;
   color: #555;
 }
+
+.navbar__top-wrapper div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
 /* 
     ===== NavbarTop - END =====
 */
