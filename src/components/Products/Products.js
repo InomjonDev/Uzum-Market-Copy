@@ -10,15 +10,12 @@ function Products() {
   useEffect(() => {
     setTimeout(() => {
       setIsDataLoaded(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
     <div className="container">
-      {!isDataLoaded && <Skeleton />}{" "}
-      {/* Показать скелетон, если данные не загружены */}
-      <ProductWrapper data={PRODUCTS} />
-      <h2>Products</h2>
+      {!isDataLoaded && <Skeleton />} <ProductWrapper data={PRODUCTS} />
     </div>
   );
 }

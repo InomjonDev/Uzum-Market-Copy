@@ -30,6 +30,7 @@ const cartSlice = createSlice({
       state.value = state.value.map((item, inx) =>
         inx === index ? { ...item, quantity: item.quantity - 1 } : item
       );
+      localStorage.setItem("uzum-cart", JSON.stringify(state.value));
     },
   },
 });
