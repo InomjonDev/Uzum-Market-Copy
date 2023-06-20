@@ -5,10 +5,16 @@ import instagramLogo from "../../assets/logo/instagram.svg";
 import telegramLogo from "../../assets/logo/telegram.svg";
 import youtubeLogo from "../../assets/logo/youtube.svg";
 import facebookLogo from "../../assets/logo/facebook.svg";
+import { useLocation } from "react-router-dom";
 
 import "./Footer.css";
 
 function Footer() {
+  const { pathname } = useLocation();
+
+  if (pathname.includes("/admin")) {
+    return <></>;
+  }
   return (
     <div className="container footer">
       <div className="footer__top">

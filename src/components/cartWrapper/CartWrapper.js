@@ -10,11 +10,25 @@ function CardWrapper({ data }) {
 
     let token = "6144853557:AAHD9rdfH1Abr0eUgGduGUucLA6e-VCGnzw";
 
-    let chat_id = -853257067;
+    let chat_id = -987447222;
+
     let inp1 = encodeURIComponent(document.getElementById("text1").value);
     let inp2 = encodeURIComponent(document.getElementById("text2").value);
     let inp3 = encodeURIComponent(document.getElementById("text3").value);
-    let my_text = `Mahsulot oluvhi:%0A - Mahsulot oluvhining ismi: ${inp1} %0A - Mahsulot oluvhining raqami: ${inp2}  %0A - Mahsulot oluvhining manzili: ${inp3}`;
+
+    let my_text = `Mahsulot oluvhi:%0A - Mahsulot oluvhining ismi: ${inp1} %0A - Mahsulot oluvhining raqami: ${inp2}  %0A - Mahsulot oluvhining manzili: ${inp3} %0A%0A`;
+
+    my_text += `Jami: ${data?.reduce(
+      (a, b) => a + b.price * b.quantity,
+      0
+    )} som`;
+
+    data?.forEach((item) => {
+      my_text += `Nomi : ${item.title} %0A`;
+      my_text += `Soni : ${item.quantity} %0A`;
+      my_text += `Narxi : ${item.price} %0A%0A`;
+    });
+
     let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
     let api = new XMLHttpRequest();
     api.open("GET", url, true);

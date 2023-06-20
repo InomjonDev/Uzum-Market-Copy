@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Singlerouter.css";
 import { useLocation } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
@@ -18,6 +18,10 @@ function Singlerouter() {
   };
 
   const totalPrice = item.price * count;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container">
