@@ -21,7 +21,7 @@ function CardWrapper({ data }) {
     my_text += `Jami: ${data?.reduce(
       (a, b) => a + b.price * b.quantity,
       0
-    )} som`;
+    )} som %0A`;
 
     data?.forEach((item) => {
       my_text += `Nomi : ${item.title} %0A`;
