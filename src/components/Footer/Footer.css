@@ -101,4 +101,7 @@
   .footer__bottom p {
     display: none;
   }
+  .footer__bottom-links {
+    flex-direction: column;
+  }
 }

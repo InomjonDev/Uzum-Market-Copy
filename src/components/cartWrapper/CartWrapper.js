@@ -48,25 +48,27 @@ function CardWrapper({ data }) {
       <div className="cart__wrapper-content">
         {data?.map((item) => (
           <div key={item.id} className="cart__wrapper-item">
-            <img src={item.url} width={80} alt="" />
-
-            <div className="div__1">
-              <h3 className="title">{item.title}</h3>
-              <button onClick={() => dispatch(removeFromCart(item.id))}>
-                <BsFillTrashFill /> O'chirish
-              </button>
+            <div className="ight">
+              <img src={item.url} width={80} alt="" />
             </div>
-            <div className="div__2">
+            <div className="eft">
+              <h3>{item.title}</h3>
               <h2 className="price">{item.price} so'm</h2>
               <button
-                disabled={item.quantity <= 1}
+                disabled={item.quantity < 1}
                 onClick={() => dispatch(decrementCart(item))}
               >
                 -
               </button>
               &nbsp;&nbsp;&nbsp;
-              <span className="">{item.quantity}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span>{item.quantity}</span>&nbsp;&nbsp;&nbsp;&nbsp;
               <button onClick={() => dispatch(addToCart(item))}>+</button>
+              <button onClick={() => dispatch(removeFromCart(item.id))}>
+                <BsFillTrashFill />
+              </button>
+              <br />
+              <br />
+              <br />
             </div>
           </div>
         ))}
@@ -74,9 +76,9 @@ function CardWrapper({ data }) {
       <div className="cart__wrapper-form">
         <h3>Buyurtma berish</h3>
         <form id="form" onSubmit={handleSubmit}>
-          <input type="text" id="text1" placeholder="Ismingiz" required />
-          <input type="text" id="text2" placeholder="Raqamingiz" required />
-          <input type="text" id="text3" placeholder="Manzil" required />
+          <input type="text" id="text1" placeholder="Ismingiz" />
+          <input type="text" id="text2" placeholder="Raqamingiz" />
+          <input type="text" id="text3" placeholder="Manzil" />
           <h3>
             Jami: {data?.reduce((a, b) => a + b.price * b.quantity, 0)} som
           </h3>
@@ -88,3 +90,44 @@ function CardWrapper({ data }) {
 }
 
 export default CardWrapper;
+
+// <div className="cart__wrapper">
+//   <div className="cart__wrapper-content">
+//     {data?.map((item) => (
+//       <div key={item.id} className="cart__wrapper-item">
+//         <img src={item.url} width={80} alt="" />
+
+//         <div className="div__1">
+//           <h3 className="title">{item.title}</h3>
+//           <button onClick={() => dispatch(removeFromCart(item.id))}>
+//             <BsFillTrashFill /> O'chirish
+//           </button>
+//         </div>
+//         <div className="div__2">
+//           <h2 className="price">{item.price} so'm</h2>
+//           <button
+//             disabled={item.quantity <= 1}
+//             onClick={() => dispatch(decrementCart(item))}
+//           >
+//             -
+//           </button>
+//           &nbsp;&nbsp;&nbsp;
+//           <span className="">{item.quantity}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+//           <button onClick={() => dispatch(addToCart(item))}>+</button>
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+//   <div className="cart__wrapper-form">
+//     <h3>Buyurtma berish</h3>
+//     <form id="form" onSubmit={handleSubmit}>
+//       <input type="text" id="text1" placeholder="Ismingiz" required />
+//       <input type="text" id="text2" placeholder="Raqamingiz" required />
+//       <input type="text" id="text3" placeholder="Manzil" required />
+//       <h3>
+//         Jami: {data?.reduce((a, b) => a + b.price * b.quantity, 0)} som
+//       </h3>
+//       <button type="submit">Olish</button>
+//     </form>
+//   </div>
+// </div>

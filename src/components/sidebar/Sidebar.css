@@ -31,3 +31,18 @@
     left: -70%;
   }
 }
+
+.sidebar__list {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.sidebar__item span {
+  margin-right: 10px;
+}
