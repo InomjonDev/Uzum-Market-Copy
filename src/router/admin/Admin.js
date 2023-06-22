@@ -9,12 +9,14 @@ function Admin() {
   return (
     <div className="admin">
       <div className="admin__sidebar">
-        <Link to={"/"}>
-          <button>
-            <AiOutlineArrowLeft />
-          </button>
-        </Link>
-        <h2>Admin dashboard</h2>
+        <div className="title">
+          <Link to={"/"}>
+            <button className="to-home">
+              <AiOutlineArrowLeft fill="#fff" />
+            </button>
+          </Link>
+          &nbsp; Admin dashboard
+        </div>
         <ul className="admin__collection">
           <li className="admin__item">
             <NavLink to={`create-product`} className="admin__link">
