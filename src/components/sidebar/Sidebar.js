@@ -22,11 +22,14 @@ import { BiLeaf } from "react-icons/bi";
 
 function Sidebar({ show, setShow }) {
   const icons = [
-    { name: <BsHeadphones />, text: "Elektronika" },
-    { name: <BsFillCalendar2WeekFill />, text: "Maishiy Texnika" },
-    { name: <GiClothes />, text: "Kiyim" },
-    { name: <GiBallerinaShoes />, text: "Poyabzal" },
-    { name: <BsHeadphones />, text: "Aksessuarlar" },
+    { name: <BsHeadphones fill="#76797F" />, text: "Elektronika" },
+    {
+      name: <GiVendingMachine fill="#8A5DE3" />,
+      text: "Maishiy Texnika",
+    },
+    { name: <GiClothes fill="#54C6FF" />, text: "Kiyim" },
+    { name: <GiBallerinaShoes fill="#FF5353" />, text: "Poyabzal" },
+    { name: <BiLeaf />, text: "Aksessuarlar" },
     { name: <WiWindBeaufort2 />, text: "Go'zallik" },
     { name: <GiHealthNormal />, text: "Salomatlik" },
     { name: <BsBuildingsFill />, text: "Uy-qurilish buyumlari" },

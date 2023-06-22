@@ -8,6 +8,7 @@ import Cart from "./router/cart/Cart";
 import Login from "./router/login/Login";
 import Singlerouter from "./router/Singlerouter/Singlerouter";
 import Admin from "./router/admin/Admin";
+import Auth from "./router/auth/Auth";
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
         <Route path="/product/:id" element={<Singlerouter />} />
+        <Route path="/" element={<Auth />}>
+          <Route path="/admin/*" element={<Admin />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

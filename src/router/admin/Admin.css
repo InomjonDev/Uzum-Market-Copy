@@ -1,0 +1,35 @@
+.admin {
+  display: flex;
+  height: 100vh;
+}
+
+.admin__sidebar {
+  width: 350px;
+  height: 100%;
+  background-color: dodgerblue;
+  padding: 30px;
+  color: #fff;
+}
+
+.admin__content {
+  flex: 1;
+  height: 100%;
+  border: 5px solid red;
+}
+
+.admin__collection {
+  margin-top: 50px;
+}
+
+.admin__link {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.admin__link.active {
+  border: 1px solid #fff;
+  background-color: #fff3;
+}

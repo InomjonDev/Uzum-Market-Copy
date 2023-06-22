@@ -40,7 +40,7 @@ function NavbarMain() {
           </li>
           <li className="nav__item">
             <AiOutlineUser />
-            <Link to={"/login"}>Kirish</Link>
+            <Link to={"/admin"}>Kirish</Link>
           </li>
           <li className="nav__item">
             <AiOutlineHeart />
