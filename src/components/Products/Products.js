@@ -3,19 +3,25 @@ import Skeleton from "../Skeleton/Skeleton";
 import { PRODUCTS } from "../../static";
 import "./Products.css";
 import ProductWrapper from "../product-wrapper/ProductWrapper";
+import { db } from "../../server";
+import { collection, getDocs } from "firebase/firestore";
 
 function Products() {
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [data, setData] = useState([]);
+  const productRef = collection(db, "products");
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsDataLoaded(true);
-    }, 1000);
+    const getProducts = async () => {
+      const fetchData = await getDocs(productRef);
+
+      setData(fetchData.docs.map((item) => ({ id: item.id, ...item.data() })));
+    };
+    getProducts();
   }, []);
 
   return (
     <div className="container">
-      {!isDataLoaded && <Skeleton />} <ProductWrapper data={PRODUCTS} />
+      {data?.length ? <ProductWrapper data={data} /> : <Skeleton />}
     </div>
   );
 }

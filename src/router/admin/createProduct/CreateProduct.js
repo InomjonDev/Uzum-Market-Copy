@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { db } from "../../../server";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 function CreateProduct() {
   // ===== controlled form || component
