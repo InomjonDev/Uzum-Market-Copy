@@ -3,7 +3,8 @@ import "./Admin.css";
 import CreateProduct from "./createProduct/CreateProduct";
 import ManageProduct from "./manageProduct/ManageProduct";
 import { NavLink, Route, Routes, Link } from "react-router-dom";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineAppstoreAdd } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
 
 function Admin() {
   return (
@@ -12,7 +13,7 @@ function Admin() {
         <div className="title">
           <Link to={"/"}>
             <button className="to-home">
-              <AiOutlineArrowLeft fill="#fff" />
+              <AiOutlineArrowLeft fill="#519f64" />
             </button>
           </Link>
           &nbsp; Admin dashboard
@@ -20,10 +21,10 @@ function Admin() {
         <ul className="admin__collection">
           <li className="admin__item">
             <NavLink to={`create-product`} className="admin__link">
-              Create Product
+              <AiOutlineAppstoreAdd /> &nbsp;Create Product
             </NavLink>
             <NavLink to={`manage-product`} className="admin__link">
-              Manage Product
+              <FiEdit /> &nbsp;Manage Product
             </NavLink>
           </li>
         </ul>

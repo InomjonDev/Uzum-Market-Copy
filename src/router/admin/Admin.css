@@ -6,8 +6,8 @@
 .admin__sidebar {
   width: 350px;
   height: 100%;
-  background-color: dodgerblue;
-  padding: 30px;
+  background-color: #fff;
+  /* padding: 30px; */
   color: #fff;
 }
 
@@ -15,16 +15,21 @@
   display: flex;
   align-items: center;
   font-size: 22px;
+  color: #519f64;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .to-home {
   text-align: center;
   padding: 2px 6px;
-  font-size: 18px;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
+  border: none;
+  color: #519f64;
+  font-weight: bold;
 
   background-color: transparent;
 }
@@ -37,6 +42,7 @@
 .admin__content {
   flex: 1;
   height: 100%;
+  background-color: #dce5fd;
 }
 
 .admin__collection {
@@ -47,13 +53,19 @@
   display: block;
   padding: 10px 12px;
   margin-bottom: 6px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   border: 1px solid transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #000;
 }
 
 .admin__link.active {
-  border: 1px solid #fff;
-  background-color: #fff3;
+  /* border: 1px solid #fff; */
+  /* background-color: #fff3; */
+  background-color: #3f0097;
+  color: #fff;
 }
 
 /* ===== Create Product - START ===== */
@@ -74,7 +86,7 @@
 
 .create-product__wrapper h2 {
   margin-bottom: 25px;
-  color: #50cfaf;
+  color: #519f64;
 }
 
 .create-product__form {
@@ -86,16 +98,17 @@
 
 .create-product__form input {
   margin-bottom: 25px;
-  padding: 10px 20px;
+  padding: 15px 60px 15px 20px;
+  outline: none;
   border: none;
   border-bottom: 2px solid #000;
-  outline: none;
+  border-radius: 7px;
   transition: all 0.3s linear;
 }
 
 .create-product__form input::placeholder {
-  font-size: 13px;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #000;
 }
 
@@ -104,7 +117,7 @@
 }
 
 .create-product__form button {
-  padding: 6px 12px;
+  padding: 10px 20px;
   font-size: 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -116,7 +129,8 @@
 
 .create-product__form button:hover {
   cursor: pointer;
-  background-color: #373b3e;
+  color: #000;
+  background-color: transparent;
   border: 1px solid #373b3e;
 }
 
