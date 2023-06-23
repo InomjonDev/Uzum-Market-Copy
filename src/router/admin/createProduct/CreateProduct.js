@@ -1,28 +1,41 @@
 import React, { useRef, useState } from "react";
+import { db } from "../../../server";
+import { collection, addDoc } from "firebase/firestore";
 
 function CreateProduct() {
-  // controlled form || component
+  // ===== controlled form || component
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [url, setUrl] = useState("");
-  // uncontrolled form || component
+  const [loading, setLoading] = useState(false);
+
+  // ===== uncontrolled form || component =====
   // const price = useRef();
   // const url = useRef();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const productRef = collection(db, "products");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     let newProduct = {
       title,
       price: +price,
       url,
     };
 
-    console.log(newProduct);
+    setLoading(true);
 
-    setTitle("");
-    setPrice("");
-    setUrl("");
+    await addDoc(productRef, newProduct)
+      .then((res) => {
+        console.log(res);
+        setTitle("");
+        setPrice("");
+        setUrl("");
+        // price.current.value = "" for useRef
+        // url.current.value = "" for useRef
+      })
+      .catch((err) => console.log(err))
+      .finally((e) => setLoading(false));
   };
 
   return (
@@ -55,7 +68,9 @@ function CreateProduct() {
             placeholder="Url"
             required
           />
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Loading..." : "Submit"}
+          </button>
         </form>
       </div>
     </div>
