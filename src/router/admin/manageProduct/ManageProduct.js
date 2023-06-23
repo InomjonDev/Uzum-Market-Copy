@@ -20,7 +20,11 @@ function ManageProduct() {
   console.log(data);
   return (
     <div className="manage-product" style={{ padding: 30 }}>
-      {data?.length ? <ProductWrapper data={data} /> : <Skeleton />}
+      {data?.length ? (
+        <ProductWrapper admin={true} data={data} />
+      ) : (
+        <Skeleton />
+      )}
     </div>
   );
 }

@@ -11,10 +11,20 @@ import { useDispatch } from "react-redux";
 import { addToHeart, removeFromHeart } from "../../context/heart";
 import { useSelector } from "react-redux";
 import { addToCart } from "../../context/cart";
+import { FiTrash2 } from "react-icons/fi";
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../../server";
 
-function ProductWrapper({ data }) {
+function ProductWrapper({ data, admin }) {
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
+
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "products", id))
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="products">
       {data?.map((item) => (
@@ -51,12 +61,21 @@ function ProductWrapper({ data }) {
                 <del>{Math.round(item.price * 1.5)} so'm</del>
                 <p>{item.price} so'm</p>
               </div>
-              <button
-                className="price__cart"
-                onClick={() => dispatch(addToCart(item))}
-              >
-                <AiOutlineShoppingCart />
-              </button>
+              {admin ? (
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className="price__cart"
+                >
+                  <FiTrash2 />
+                </button>
+              ) : (
+                <button
+                  className="price__cart"
+                  onClick={() => dispatch(addToCart(item))}
+                >
+                  <AiOutlineShoppingCart />
+                </button>
+              )}
             </div>
           </div>
         </div>
