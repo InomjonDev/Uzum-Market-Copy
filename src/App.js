@@ -10,6 +10,10 @@ import Singlerouter from "./router/Singlerouter/Singlerouter";
 import Admin from "./router/admin/Admin";
 import Auth from "./router/auth/Auth";
 
+// Toast modal
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +30,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

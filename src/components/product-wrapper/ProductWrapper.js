@@ -14,6 +14,8 @@ import { addToCart } from "../../context/cart";
 import { FiTrash2 } from "react-icons/fi";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../server";
+import { toggle } from "../../context/proReload";
+import { toast } from "react-toastify";
 
 function ProductWrapper({ data, admin }) {
   const dispatch = useDispatch();
@@ -21,7 +23,20 @@ function ProductWrapper({ data, admin }) {
 
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "products", id))
-      .then((res) => console.log(res))
+      .then((res) => {
+        dispatch(toggle());
+        console.log(res);
+        toast.warn("O'chirildi", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
       .catch((err) => console.log(err));
   };
 

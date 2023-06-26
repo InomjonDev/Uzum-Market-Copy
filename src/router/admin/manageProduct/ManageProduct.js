@@ -3,10 +3,12 @@ import { db } from "../../../server";
 import { collection, getDocs } from "firebase/firestore";
 import ProductWrapper from "../../../components/product-wrapper/ProductWrapper";
 import Skeleton from "../../../components/Skeleton/Skeleton";
+import { useSelector } from "react-redux";
 
 function ManageProduct() {
   const [data, setData] = useState([]);
   const productRef = collection(db, "products");
+  const proReload = useSelector((s) => s.proReload.value);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -15,7 +17,7 @@ function ManageProduct() {
       setData(fetchData.docs.map((item) => ({ id: item.id, ...item.data() })));
     };
     getProducts();
-  }, []);
+  }, [proReload]);
 
   console.log(data);
   return (

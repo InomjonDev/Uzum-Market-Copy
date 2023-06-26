@@ -33,6 +33,7 @@
   border: none;
   border-radius: 10px;
   font-size: 22px;
+  outline: none;
 }
 
 .login__btn {
@@ -43,6 +44,7 @@
   border: none;
   border-radius: 10px;
   margin-bottom: 32px;
+  cursor: pointer;
 }
 
 .login__subtext {

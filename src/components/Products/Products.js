@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "../Skeleton/Skeleton";
-import { PRODUCTS } from "../../static";
 import "./Products.css";
 import ProductWrapper from "../product-wrapper/ProductWrapper";
 import { db } from "../../server";
 import { collection, getDocs } from "firebase/firestore";
+import { useSelector } from "react-redux";
+import proReload from "../../context/proReload";
 
 function Products() {
   const [data, setData] = useState([]);

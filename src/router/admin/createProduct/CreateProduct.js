@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { db } from "../../../server";
 import { collection, getDocs, addDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function CreateProduct() {
   // ===== controlled form || component
@@ -31,10 +32,13 @@ function CreateProduct() {
         setTitle("");
         setPrice("");
         setUrl("");
+        toast.success("Muvaffaqiyatli saqlandi");
         // price.current.value = "" for useRef
         // url.current.value = "" for useRef
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err);
+      })
       .finally((e) => setLoading(false));
   };
 

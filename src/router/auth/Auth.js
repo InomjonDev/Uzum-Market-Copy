@@ -2,7 +2,8 @@ import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
 function Auth() {
-  const user = true;
+  const user = localStorage.getItem("user");
+  // const user = true;
   return user ? <Outlet /> : <Navigate to={"/login"} replace />;
 }
 
